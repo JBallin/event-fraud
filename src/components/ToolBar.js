@@ -35,25 +35,25 @@ export default props => {
           Mark As Read
         </button>
 
-        <button className="btn btn-default">
+        <button className="btn btn-default" disabled={disableButton(selected)}>
           Mark As Unread
         </button>
 
-        <select className="form-control label-select">
+        <select className="form-control label-select" disabled={disableButton(selected)}>
           <option>Apply label</option>
           <option value="dev">dev</option>
           <option value="personal">personal</option>
           <option value="gschool">gschool</option>
         </select>
 
-        <select className="form-control label-select">
+        <select className="form-control label-select" disabled={disableButton(selected)}>
           <option>Remove label</option>
           <option value="dev">dev</option>
           <option value="personal">personal</option>
           <option value="gschool">gschool</option>
         </select>
 
-        <button className="btn btn-default">
+        <button className="btn btn-default" disabled={disableButton(selected)}>
           <i className="fa fa-trash-o"></i>
         </button>
       </div>
