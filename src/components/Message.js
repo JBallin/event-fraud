@@ -4,7 +4,7 @@ const isRead = message => message.read ? 'read' : 'unread';
 const isSelected = message => message.selected ? 'selected' : '';
 
 export default ({ message }) => {
-  return(
+  return (
     <div className={`row message ${isRead(message)} ${isSelected(message)}`}>
       <div className="col-xs-1">
         <div className="row">
