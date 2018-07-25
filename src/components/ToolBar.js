@@ -10,7 +10,7 @@ export default props => {
     } else if (selected === 'all') {
       return 'check-';
     } else {
-      throw 'Selected should be none, some, or all'
+      throw new Error('Selected should be none, some, or all');
     }
   }
 
