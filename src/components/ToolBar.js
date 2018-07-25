@@ -1,6 +1,19 @@
 import React from 'react';
 
 export default props => {
+
+  function setCheck(selected) {
+    if (selected === 'none') {
+      return '';
+    } else if (selected === 'some') {
+      return 'minus-';
+    } else if (selected === 'all') {
+      return 'check-';
+    } else {
+      throw 'Selected should be none, some, or all'
+    }
+  }
+
   return (
     <div className="row toolbar">
       <div className="col-md-12">
@@ -10,7 +23,7 @@ export default props => {
         </p>
 
         <button className="btn btn-default">
-          <i className="fa fa-check-square-o"></i>
+          <i className={`fa fa-${setCheck(props.selected)}square-o`}></i>
         </button>
 
         <button className="btn btn-default">
