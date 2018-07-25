@@ -15,6 +15,10 @@ export default props => {
     }
   }
 
+  function disableButton(selected) {
+    return selected === 'none' ? 'disabled' : false;
+  }
+
   return (
     <div className="row toolbar">
       <div className="col-md-12">
@@ -27,7 +31,7 @@ export default props => {
           <i className={`fa fa-${setCheck(selected)}square-o`}></i>
         </button>
 
-        <button className="btn btn-default">
+        <button className="btn btn-default" disabled={disableButton(selected)}>
           Mark As Read
         </button>
 
