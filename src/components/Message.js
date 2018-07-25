@@ -12,7 +12,7 @@ export default ({ message }) => {
             <input type="checkbox" />
           </div>
           <div className="col-xs-2">
-            <i className="star fa fa-star-o"></i>
+            <i className="fa fa-thumbs-up"></i>
           </div>
         </div>
       </div>
