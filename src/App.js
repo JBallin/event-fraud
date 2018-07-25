@@ -10,61 +10,53 @@ class App extends Component {
     messages: [
       {
         "id": 1,
-        "subject": "You can't input the protocol without calculating the mobile RSS protocol!",
+        "title": "Superbowl Party",
         "read": false,
-        "starred": true,
-        "labels": ["dev", "personal"]
+        "fraud": true
       },
       {
         "id": 2,
-        "subject": "connecting the system won't do anything, we need to input the mobile AI panel!",
+        "title": "Fire Fest",
         "read": false,
-        "starred": false,
-        "selected": true,
-        "labels": []
+        "fraud": false,
+        "selected": true
       },
       {
         "id": 3,
-        "subject": "Use the 1080p HTTP feed, then you can parse the cross-platform hard drive!",
+        "title": "Burning man prep",
         "read": false,
-        "starred": true,
-        "labels": ["dev"]
+        "fraud": true
       },
       {
         "id": 4,
-        "subject": "We need to program the primary TCP hard drive!",
+        "title": "Basic JS Workshop",
         "read": true,
-        "starred": false,
-        "selected": true,
-        "labels": []
+        "fraud": false,
+        "selected": true
       },
       {
         "id": 5,
-        "subject": "If we override the interface, we can get to the HTTP feed through the virtual EXE interface!",
+        "title": "Smoldering Man",
         "read": false,
-        "starred": false,
-        "labels": ["personal"]
+        "fraud": false
       },
       {
         "id": 6,
-        "subject": "We need to back up the wireless GB driver!",
+        "title": "MAGA",
         "read": true,
-        "starred": true,
-        "labels": []
+        "fraud": true
       },
       {
         "id": 7,
-        "subject": "We need to index the mobile PCI bus!",
+        "title": "Pool Party",
         "read": true,
-        "starred": false,
-        "labels": ["dev", "personal"]
+        "fraud": false
       },
       {
         "id": 8,
-        "subject": "If we connect the sensor, we can get to the HDD port through the redundant IB firewall!",
+        "title": "How Weird SF",
         "read": true,
-        "starred": true,
-        "labels": []
+        "fraud": true
       }
     ]
   }
