@@ -5,7 +5,7 @@ import ToolBar from './components/ToolBar'
 class App extends Component {
 
   state = {
-    selected: 'all'
+    selected: 'none'
   }
 
   render() {
