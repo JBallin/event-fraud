@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import ToolBar from './components/ToolBar';
-import MessageList from './components/MessageList';
+import EventList from './components/EventList';
 
 class App extends Component {
 
   state = {
     selected: 'none',
-    messages: [
+    events: [
       {
         "id": 1,
         "title": "Superbowl Party",
@@ -65,7 +65,7 @@ class App extends Component {
     return (
       <div className='container'>
         <ToolBar selected={this.state.selected} />
-        <MessageList messages={this.state.messages} />
+        <EventList events={this.state.events} />
       </div>
     );
   }

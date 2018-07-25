@@ -1,6 +1,6 @@
 import React from 'react'
-import Message from './Message'
+import Event from './Event'
 
-export default ({ messages }) => {
-  return messages.map(message => <Message message={message} key={message.id} />)
+export default ({ events }) => {
+  return events.map(event => <Event event={event} key={event.id} />)
 }

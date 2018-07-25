@@ -1,11 +1,11 @@
 import React from 'react';
 
-const isRead = message => message.read ? 'read' : 'unread';
-const isSelected = message => message.selected ? 'selected' : '';
+const isRead = event => event.read ? 'read' : 'unread';
+const isSelected = event => event.selected ? 'selected' : '';
 
-export default ({ message }) => {
+export default ({ event }) => {
   return (
-    <div className={`row message ${isRead(message)} ${isSelected(message)}`}>
+    <div className={`row event ${isRead(event)} ${isSelected(event)}`}>
       <div className="col-xs-1">
         <div className="row">
           <div className="col-xs-2">
@@ -17,7 +17,7 @@ export default ({ message }) => {
         </div>
       </div>
       <div className="col-xs-11">
-        <a href="#">{message.title}</a>
+        <a href="#">{event.title}</a>
       </div>
     </div>
   )

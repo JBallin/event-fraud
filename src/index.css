@@ -1,4 +1,4 @@
-.message {
+.event {
   margin-left: 0px;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -6,36 +6,36 @@
   border-bottom: 1px solid #efefef;
 }
 
-.message a {
+.event a {
   color: black;
 }
 
-.message a:hover, .message a:active, .message a:focus {
+.event a:hover, .event a:active, .event a:focus {
   text-decoration: none;
 }
 
-.message + .message {
+.event + .event {
   border-top: 1px solid #efefef;
 }
 
-.message.read {
+.event.read {
   background: #efefef;
 }
 
-.message.unread {
+.event.unread {
   font-weight: bold;
 }
 
-.message.selected {
+.event.selected {
   background: #ffffcc;
 }
 
-.message:hover {
+.event:hover {
   margin-left: -3px;
   border-left: 3px solid #ccc;
 }
 
-.message-body {
+.event-body {
   background: #ccc;
   margin-left: 0;
   margin-bottom: 1em;
