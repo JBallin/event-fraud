@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default props => {
-  const { selected } = props
+export default ({ selected }) => {
 
   function setCheck(selected) {
     if (selected === 'none') {
