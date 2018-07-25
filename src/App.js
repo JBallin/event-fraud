@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ToolBar from './components/ToolBar';
+import MessageList from './components/MessageList';
 
 class App extends Component {
 
@@ -72,6 +73,7 @@ class App extends Component {
     return (
       <div className='container'>
         <ToolBar selected={this.state.selected} />
+        <MessageList messages={this.state.messages} />
       </div>
     );
   }
