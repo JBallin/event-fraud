@@ -17,7 +17,7 @@ export default ({ message }) => {
         </div>
       </div>
       <div className="col-xs-11">
-        <a href="#">{message.subject}</a>
+        <a href="#">{message.title}</a>
       </div>
     </div>
   )
