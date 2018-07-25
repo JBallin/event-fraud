@@ -5,7 +5,7 @@ import ToolBar from './components/ToolBar'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className='container'>
         <ToolBar />
       </div>
     );
