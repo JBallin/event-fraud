@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default props => {
+  const { selected } = props
 
   function setCheck(selected) {
     if (selected === 'none') {
@@ -23,7 +24,7 @@ export default props => {
         </p>
 
         <button className="btn btn-default">
-          <i className={`fa fa-${setCheck(props.selected)}square-o`}></i>
+          <i className={`fa fa-${setCheck(selected)}square-o`}></i>
         </button>
 
         <button className="btn btn-default">
