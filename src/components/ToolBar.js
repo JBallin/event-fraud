@@ -31,14 +31,14 @@ export default ({ selected }) => {
         </button>
 
         <button className="btn btn-default" disabled={disableButton(selected)}>
-          Mark As Read
+          Resolved
         </button>
 
         <button className="btn btn-default" disabled={disableButton(selected)}>
-          Mark As Unread
+          Unresolved
         </button>
 
-        <select className="form-control label-select" disabled={disableButton(selected)}>
+        {/* <select className="form-control label-select" disabled={disableButton(selected)}>
           <option>Apply label</option>
           <option value="dev">dev</option>
           <option value="personal">personal</option>
@@ -50,7 +50,7 @@ export default ({ selected }) => {
           <option value="dev">dev</option>
           <option value="personal">personal</option>
           <option value="gschool">gschool</option>
-        </select>
+        </select> */}
 
         <button className="btn btn-default" disabled={disableButton(selected)}>
           <i className="fa fa-trash-o"></i>
