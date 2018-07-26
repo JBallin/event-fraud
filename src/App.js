@@ -5,48 +5,13 @@ import EventList from './components/EventList';
 class App extends Component {
 
   state = {
-    events: [
-      {
-        "id": 1,
-        "title": "Superbowl Party",
-        "fraud": null
-      },
-      {
-        "id": 2,
-        "title": "Fire Fest",
-        "fraud": false
-      },
-      {
-        "id": 3,
-        "title": "Burning man prep",
-        "fraud": true
-      },
-      {
-        "id": 4,
-        "title": "Basic JS Workshop",
-        "fraud": false
-      },
-      {
-        "id": 5,
-        "title": "Smoldering Man",
-        "fraud": false
-      },
-      {
-        "id": 6,
-        "title": "MAGA",
-        "fraud": true
-      },
-      {
-        "id": 7,
-        "title": "Pool Party",
-        "fraud": false
-      },
-      {
-        "id": 8,
-        "title": "How Weird SF",
-        "fraud": null
-      }
-    ]
+    events: []
+  }
+
+  componentDidMount = async () => {
+    const eventsJSON = await fetch('http://localhost:8082/events');
+    const events = await eventsJSON.json();
+    this.setState({...this.state.events, events});
   }
 
   toggleFraud = (event) => {
@@ -57,6 +22,7 @@ class App extends Component {
     } else {
       event.fraud = null
     }
+    this.setState({...this.state.events, event})
   }
 
   render() {
