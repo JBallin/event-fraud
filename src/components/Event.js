@@ -16,7 +16,7 @@ export default ({ event, toggleFraud }) => {
             <input type="checkbox" />
           </div> */}
           <div className="col-xs-2">
-            <i className={`fa fa-${setThumb(event)}`}></i>
+            <i className={`fa fa-${setThumb(event)}`} onClick={() => toggleFraud(event)}></i>
           </div>
         </div>
       </div>
