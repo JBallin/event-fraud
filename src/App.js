@@ -14,7 +14,7 @@ class App extends Component {
     this.setState({...this.state.events, events});
   }
 
-  toggleFraud = (event) => {
+  toggleFraud = async (event) => {
     if (event.fraud === null) {
       event.fraud = true
     } else if (event.fraud === true) {
@@ -22,7 +22,11 @@ class App extends Component {
     } else {
       event.fraud = null
     }
-    this.setState({...this.state.events, event})
+    await fetch(`http://localhost:8082/events/${event.id}`, {
+      method: "PATCH",
+      body: JSON.stringify(event)
+    })
+    this.setState({})
   }
 
   render() {
