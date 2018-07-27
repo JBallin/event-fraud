@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import EventList from './components/EventList';
 
-const api = 'http://fraud-api.herokuapp.com/events'
+const api = 'https://fraud-api.herokuapp.com/events'
 
 class App extends Component {
 
