@@ -1,4 +1,5 @@
 import React from 'react';
+import Label from './Label'
 
 const isPending = event => event.fraud === null ? 'unread' : 'read';
 const setThumb = event => {
@@ -17,11 +18,9 @@ export default ({ event, toggleFraud }) => {
           </div>
         </div>
       </div>
-      <div className="col-xs-4">
+      <div className="col-xs-11">
+        <Label label={event.prob} />
         <a href="#">{event.title}</a>
-      </div>
-      <div className="col-xs-4">
-        <p>Model Prediction</p>
       </div>
     </div>
   )
