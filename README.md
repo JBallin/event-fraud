@@ -6,4 +6,5 @@ This was built by [JBallin](https://github.com/JBallin) and [hyperrex](https://g
 
 ### Usage ###
 
-Review all `?` events (shown as unread) by toggling them to either be thumbs up (not fraud) or thumbs down (fraud).
+Review all `?` events (shown as unread) by toggling them to either be thumbs up (not fraud) or thumbs down (fraud). 
+The state is updated and persists in the API!
