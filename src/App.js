@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import EventList from './components/EventList';
 
+const api = 'http://fraud-api.herokuapp.com/events'
+
 class App extends Component {
 
   state = {
@@ -9,13 +11,8 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    const eventsJSON = await fetch('http://10.3.34.145:8080/api/v1/getdata?page=1');
-    const eventsUnfiltered = await eventsJSON.json();
-    const randProbs = [];
-    for (let i = 0; i < 10; i++) {
-      randProbs.push(Math.floor((Math.random() * 100) + 1))
-    }
-    const events = eventsUnfiltered.map((event, i) => ({ id: event._id, title: event.name, fraud: null, prob: randProbs[i] }))
+    const eventsJSON = await fetch(api);
+    const events = await eventsJSON.json();
     this.setState({...this.state, events});
   }
 
@@ -27,7 +24,8 @@ class App extends Component {
     } else {
       event.fraud = null
     }
-    await fetch(`http://localhost:8082/events/${event.id}`, {
+    await fetch(api + '/' + event.id, {
+      headers: {  'Content-Type': 'application/json' },
       method: "PATCH",
       body: JSON.stringify(event)
     })
