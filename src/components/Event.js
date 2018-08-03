@@ -20,7 +20,7 @@ export default ({ event, toggleFraud }) => {
       </div>
       <div className="col-xs-11">
         <Label label={event.prob} />
-        <a href="#">{event.title}</a>
+        <a href={`#${event.id}`}>{event.title}</a>
       </div>
     </div>
   )
