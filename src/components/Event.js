@@ -10,11 +10,14 @@ const setThumb = event => {
 
 export default ({ event, toggleFraud }) => {
   return (
-    <div className={`row event ${isPending(event)}`}>
+    <div
+      className={`row event ${isPending(event)}`}
+      onClick={() => toggleFraud(event)}
+    >
       <div className="col-xs-1">
         <div className="row">
           <div className="col-xs-2">
-            <i className={`fa fa-${setThumb(event)}`} onClick={() => toggleFraud(event)}></i>
+            <i className={`fa fa-${setThumb(event)}`}></i>
           </div>
         </div>
       </div>
