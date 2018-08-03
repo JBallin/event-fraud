@@ -11,20 +11,23 @@ class App extends Component {
 
   state = {
     events: [],
-    loading: true
+    loading: true,
+    apiError: false
   }
 
   componentDidMount = async () => {
     let events;
-    const eventsJSON = await fetch(api);
-    eventsJSON.json().then(data => events = data);
-    setTimeout(() => {
-      while (!events) {};
-      this.setState({
-        events: this.state.events.concat(events),
-        loading: false
-      })
-    }, 500)
+    const eventsJSON = await fetch(api).catch(e => {if(e) this.setState({apiError: true})})
+    if (!this.state.apiError) {
+      eventsJSON.json().then(data => events = data);
+      setTimeout(() => {
+        while (!events) {};
+        this.setState({
+          events: this.state.events.concat(events),
+          loading: false
+        })
+      }, 500)
+    }
   }
 
   toggleFraud = async (event) => {
@@ -48,11 +51,14 @@ class App extends Component {
       <div className='container'>
         <h3>Fraud Monitor</h3>
         {
-          this.state.loading ? <Spinner /> :
-          <EventList
-            events={this.state.events}
-            toggleFraud={this.toggleFraud}
-          />
+          this.state.apiError ?
+            <p style={{color:'red'}}>Failed to fetch: {api}</p> :
+          this.state.loading ?
+            <Spinner /> :
+            <EventList
+              events={this.state.events}
+              toggleFraud={this.toggleFraud}
+            />
         }
       </div>
     );
