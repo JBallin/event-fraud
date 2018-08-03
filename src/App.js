@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
 import EventList from './components/EventList';
+import Spinner from './components/Spinner';
 
 const api = 'https://fraud-api.herokuapp.com/events'
 
 class App extends Component {
 
   state = {
-    events: []
+    events: [],
+    loading: true
   }
 
   componentDidMount = async () => {
     const eventsJSON = await fetch(api);
     const events = await eventsJSON.json();
-    this.setState({...this.state, events});
+    setTimeout(() => this.setState({
+      events: this.state.events.concat(events),
+      loading: false
+    }), 500)
   }
 
   toggleFraud = async (event) => {
@@ -36,7 +41,13 @@ class App extends Component {
     return (
       <div className='container'>
         <h3>Fraud Monitor</h3>
-        <EventList events={this.state.events} toggleFraud={this.toggleFraud} />
+        {
+          this.state.loading ? <Spinner /> :
+          <EventList
+            events={this.state.events}
+            toggleFraud={this.toggleFraud}
+          />
+        }
       </div>
     );
   }
