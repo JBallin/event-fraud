@@ -13,12 +13,16 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
+    let events;
     const eventsJSON = await fetch(api);
-    const events = await eventsJSON.json();
-    setTimeout(() => this.setState({
-      events: this.state.events.concat(events),
-      loading: false
-    }), 500)
+    eventsJSON.json().then(data => events = data);
+    setTimeout(() => {
+      while (!events) {};
+      this.setState({
+        events: this.state.events.concat(events),
+        loading: false
+      })
+    }, 500)
   }
 
   toggleFraud = async (event) => {
