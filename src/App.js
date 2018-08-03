@@ -3,7 +3,9 @@ import './App.css';
 import EventList from './components/EventList';
 import Spinner from './components/Spinner';
 
-const api = 'https://fraud-api.herokuapp.com/events'
+const { host } = window.location;
+const apiHost = host.includes('heroku') ? 'fraud-api.herokuapp.com' : 'localhost:8082';
+const api = `http://${apiHost}/events`;
 
 class App extends Component {
 
