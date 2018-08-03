@@ -43,7 +43,14 @@ class App extends Component {
       method: "PATCH",
       body: JSON.stringify(event)
     })
-    this.setState({})
+    .then(res => res.json())
+    .then(updatedEvent => {
+      this.setState({
+        events: this.state.events.map(event => (
+          event.id === updatedEvent.id ? updatedEvent : event
+        ))
+      });
+    })
   }
 
   render() {
